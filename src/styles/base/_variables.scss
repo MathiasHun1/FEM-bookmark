@@ -1,10 +1,12 @@
 // Breakpoints
-$breakpoint-mobile: 600px;
+$breakpoint-mobile: 800px;
+$breakpoint-tablet: 850px;
 
 // Colors
 $clr-blue: hsl(231 69 60);
 $clr-red: hsl(0 94 66);
 $clr-dark-grey: hsl(229 31 21);
+$clr-button-shadow: hsla(231 69 60 / 0.3);
 $clr-grey: hsl(229 8 60);
 
 //Font
@@ -13,11 +15,15 @@ $ff-base: 'Rubik', sans;
 $fw-semi-bold: 500;
 $fw-regular: 400;
 
+//Spacings
+$spacing-app-desktop: 11.25vw;
+$spacing-app-tablet: 5vw;
+
 // font mixins
 @mixin font-link {
-  font-size: $fs-XS;
+  font-size: calc(13rem / 16);
   font-weight: $fw-regular;
-  line-height: (17/13) rem;
+  line-height: (17/13);
   letter-spacing: 1.5px;
   @media (max-width: $breakpoint-mobile) {
   }
@@ -87,7 +93,7 @@ $fw-regular: 400;
   font-weight: $fw-regular;
   line-height: calc(17 / 16);
   letter-spacing: 0.53px;
-  color: hsla(229 31 21 / 0.75);
+  color: hsla(229 31 21);
 }
 
 @mixin font-logo-title {
@@ -132,7 +138,6 @@ $fw-regular: 400;
   font-weight: $fw-semi-bold;
   line-height: calc(40 / 13);
   letter-spacing: 5px;
-
   @media (max-width: $breakpoint-mobile) {
     font-size: calc(12rem / 16);
     line-height: calc(40 / 12);

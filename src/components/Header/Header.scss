@@ -1,0 +1,65 @@
+@import '../../styles/base/variables';
+
+$header-gap: 48px;
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 10px;
+  padding-inline: $spacing-app-desktop;
+  text-transform: uppercase;
+  @include font-link;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-inline: $spacing-app-tablet;
+  }
+}
+
+.header__logowrapper {
+  width: 150px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: $header-gap;
+}
+
+.header__list {
+  padding: 0;
+  display: flex;
+  gap: $header-gap;
+}
+
+.header__list-item {
+  list-style-type: none;
+
+  &:hover {
+    color: $clr-red;
+    cursor: pointer;
+  }
+
+  .header__link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.header__login-button {
+  color: white;
+  background: $clr-red;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 5px;
+  text-transform: inherit;
+  font-weight: $fw-semi-bold;
+
+  &:hover {
+    color: $clr-red;
+    background: none;
+    outline: 2px solid $clr-red;
+    cursor: pointer;
+  }
+}
