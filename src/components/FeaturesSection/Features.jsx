@@ -13,10 +13,6 @@ const Features = () => {
     transform: ' translateX(0%)',
   });
 
-  useEffect(() => {
-    console.log(activeFeature);
-  }, [activeFeature]);
-
   const handleStepPosition = (e) => {
     const position = e.target.dataset.position;
     setStepperStyle({ transform: `translateX(${position}%)` });
