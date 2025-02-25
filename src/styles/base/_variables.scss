@@ -6,8 +6,9 @@ $breakpoint-tablet: 850px;
 $clr-blue: hsl(231 69 60);
 $clr-red: hsl(0 94 66);
 $clr-dark-grey: hsl(229 31 21);
-$clr-button-shadow: hsla(231 69 60 / 0.3);
+$clr-button-shadow: hsla(231 69 60 / 0.15);
 $clr-grey: hsl(229 8 60);
+$clr-white: hsl(0 0 100);
 
 //Font
 $ff-base: 'Rubik', sans;
@@ -133,7 +134,7 @@ $spacing-app-tablet: 5vw;
   }
 }
 
-@mixin font-footer-pulled {
+@mixin font-footer-streched {
   font-size: calc(13rem / 16);
   font-weight: $fw-semi-bold;
   line-height: calc(40 / 13);

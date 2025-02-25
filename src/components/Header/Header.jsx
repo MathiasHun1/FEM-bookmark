@@ -3,6 +3,7 @@ import bookmark from '../../assets/logo-bookmark.svg';
 import { COLORS } from '../../constants';
 
 import Button from '../Button';
+import NavList from '../NavList';
 
 const Header = () => {
   return (
@@ -12,23 +13,7 @@ const Header = () => {
       </div>
 
       <nav className="header__nav">
-        <ul className="header__list">
-          <li className="header__list-item">
-            <a className="header__link" href="">
-              features
-            </a>
-          </li>
-          <li className="header__list-item">
-            <a href="" className="header__link">
-              pricing
-            </a>
-          </li>
-          <li className="header__list-item">
-            <a href="" className="header__link">
-              contacts
-            </a>
-          </li>
-        </ul>
+        <NavList />
         <Button textColor="white" backgroundColor={COLORS.red}>
           LOGIN
         </Button>

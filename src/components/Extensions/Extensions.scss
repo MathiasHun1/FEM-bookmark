@@ -1,0 +1,73 @@
+@use './../../styles/base/' as *;
+
+.extensions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(48rem / 16);
+  padding-bottom: calc(150px + 2 * 40px);
+}
+
+.extensions__text-section {
+  max-width: 540px;
+  text-align: center;
+  align-self: center;
+}
+
+.extensions__title {
+  @include font-sub-title;
+  margin-bottom: 1rem;
+}
+
+.extension__para {
+  @include font-para;
+}
+
+.extensions__card-section {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+
+// Card styles
+
+.card {
+  --card-width: 280px;
+  width: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  padding-top: 50px;
+  box-shadow: 0px 12px 10px 3px $clr-button-shadow;
+  border-radius: 15px;
+
+  @for $i from 0 through 2 {
+    &:nth-of-type(#{$i + 1}) {
+      transform: translateY(#{$i * 40}px);
+    }
+  }
+}
+
+.card-image__wrapper {
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 2rem;
+}
+
+.card__text-container {
+  margin-bottom: 2rem;
+}
+
+.card__title {
+  @include font-logo-title;
+}
+
+.card__para {
+  @include font-logo-para;
+}
+
+.dotted-line {
+  width: var(--card-width);
+  margin-bottom: 24px;
+}

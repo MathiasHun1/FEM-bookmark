@@ -1,0 +1,69 @@
+@use '../../styles/base/' as *;
+
+.contact-section {
+  background-color: $clr-blue;
+  padding-top: 58px;
+  padding-bottom: 74px;
+  display: flex;
+  justify-content: center;
+  color: $clr-white;
+  text-align: center;
+}
+
+.container {
+  max-width: 450px;
+}
+
+.contact-section__streched {
+  @include font-footer-streched;
+  text-transform: uppercase;
+}
+
+.contact-section__title {
+  @include font-sub-title;
+  margin-bottom: 36px;
+  text-wrap: initial;
+}
+
+.contact-section__form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.input__wrapper {
+  position: relative;
+
+  .form__input-field {
+    width: 18.75rem;
+    padding-block: 10px;
+    padding-inline: 20px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .input__error-message {
+    position: absolute;
+    width: 18.75rem;
+    color: $clr-white;
+    background: $clr-red;
+    font-size: calc(12rem / 16);
+    text-align: start;
+    padding: 6px 12px;
+    opacity: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+
+.error-message-visible {
+  opacity: 1 !important;
+}
+
+.input-error-visible {
+  outline: 4px solid $clr-red;
+  outline-offset: -4px;
+  background-image: url('/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: 95% center;
+}

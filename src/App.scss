@@ -5,6 +5,11 @@
 .app {
   min-height: 100%;
   padding-top: 48px;
-  max-width: 2000px;
+  max-width: 3500px;
   margin: 0 auto;
+}
+
+.test {
+  display: flex;
+  user-select: none;
 }

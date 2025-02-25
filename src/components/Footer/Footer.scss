@@ -1,0 +1,44 @@
+@use '../../styles/base/' as *;
+
+.footer {
+  padding-inline: $spacing-app-desktop;
+  padding-block: 32px;
+  background: $clr-dark-grey;
+  color: white;
+  @include font-link;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-inline: $spacing-app-tablet;
+  }
+}
+
+.footer__logo {
+  width: 150px;
+}
+
+.footer__navigation-container {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.social-icons-container {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 34px;
+}
+
+.social-icon {
+  width: 24px;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+  & > path {
+    fill: $clr-red;
+  }
+}

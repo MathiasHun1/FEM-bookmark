@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './Button.scss';
 
-const Button = ({ children, textColor, backgroundColor }) => {
+const Button = ({ children, textColor, backgroundColor, uniqueStyle }) => {
   const [isActive, setIsActive] = useState(false);
 
   const styleDefault = {
     color: textColor,
     background: backgroundColor,
+    ...uniqueStyle,
   };
 
   const styleHovered = {
@@ -14,6 +15,7 @@ const Button = ({ children, textColor, backgroundColor }) => {
     backgroundColor: textColor,
     outline: `2px solid ${backgroundColor}`,
     cursor: 'pointer',
+    ...uniqueStyle,
   };
 
   return (
