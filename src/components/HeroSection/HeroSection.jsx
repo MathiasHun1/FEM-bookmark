@@ -26,7 +26,7 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
-      <Illustration image={heroSVG} direction="right" />
+      {/* <Illustration image={heroSVG} direction="right" /> */}
     </section>
   );
 };

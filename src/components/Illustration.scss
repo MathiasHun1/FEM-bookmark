@@ -6,7 +6,6 @@
 
 .illustration__decor {
   width: clamp(300px, 70vw, 5000px);
-  // aspect-ratio: 10/3.5;
   height: calc(70vw / 3);
   max-height: 350px;
   background: $clr-blue;

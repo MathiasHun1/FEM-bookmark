@@ -10,10 +10,10 @@
   align-items: center;
   padding-top: 100px;
   padding-bottom: 80px;
+  padding-inline: $spacing-app-desktop;
 }
 
-.hero-section > * {
-  min-width: 0;
+.hero-section__grid {
 }
 
 .hero-section__text-container {

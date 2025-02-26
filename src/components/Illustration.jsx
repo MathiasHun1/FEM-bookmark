@@ -18,9 +18,9 @@ const Illustration = ({ image, direction, imageStyle }) => {
   return (
     <div className="illustration-container">
       <div className="illustration__image" style={imageStyle}>
-        <img src={image} alt="illustration image" />
+        <img src={image} alt="illustration__image" />
       </div>
-      <div className="illustration__decor" style={style}></div>
+      {/* <div className="illustration__decor" style={style}></div> */}
     </div>
   );
 };
