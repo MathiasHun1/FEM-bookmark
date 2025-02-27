@@ -1,7 +1,3 @@
-import './ContactSection.scss';
-
-import Button from '../Button';
-import { COLORS } from '../../constants';
 import { useState } from 'react';
 
 const ContactSection = () => {
@@ -52,13 +48,7 @@ const ContactSection = () => {
               whoops, make sure it's an email
             </p>
           </div>
-          <Button
-            textColor={COLORS.white}
-            backgroundColor={COLORS.red}
-            uniqueStyle={{ padding: '10px 18px' }}
-          >
-            Contact Us
-          </Button>
+          <button className="contact-section__button">Contact Us</button>
         </form>
       </div>
     </section>

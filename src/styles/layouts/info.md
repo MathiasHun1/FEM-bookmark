@@ -1,0 +1,1 @@
+- everything that is related to a specific page or layout (can be split to layouts + pages folder)

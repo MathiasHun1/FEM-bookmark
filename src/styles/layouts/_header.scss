@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+.header {
+  padding-top: 48px;
+}
+
+.header__inner-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: $nav-spacing;
+}
+
+.header__button {
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  font-size: calc(13rem / 16);
+  padding: 12px 32px;
+  @include button-basic($clr-white, $clr-red);
+}

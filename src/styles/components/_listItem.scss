@@ -1,10 +1,11 @@
-@use '../styles/base/' as *;
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
 
 .faq-section__list-item {
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   padding-block: 1rem;
   &:first-of-type {
-    border-top: 2px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
   }
 
   .list-item__flex-container {
@@ -18,20 +19,28 @@
   }
 
   .list-item__title {
-    @include font-faq-title;
+    font-size: calc(18rem / 16);
+    font-weight: $fw-regular;
+    color: $clr-dark-grey;
   }
 
   .list-item__para {
-    @include font-faq-para;
+    font-size: calc(16rem / 16);
+    line-height: 2.3;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: max-height 200ms ease-out, opacity 150ms ease-out;
+
+    @include media.small-under {
+      font-size: calc(15rem / 16);
+      line-height: 2;
+    }
   }
 
   .list-item__para-opened {
     max-height: 300px !important;
-    opacity: 1 !important;
+    opacity: 0.75 !important;
   }
 
   .list-item__icon {

@@ -1,4 +1,5 @@
-@use '../../styles/base/' as *;
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
 
 .faq-section {
   --border-color: hsla(229 31 21 / 0.15);
@@ -15,12 +16,11 @@
   margin-bottom: 56px;
 
   .faq-section__title {
-    @include font-sub-title;
     margin-bottom: 1rem;
   }
 
   .faq-section__para {
-    @include font-para;
+    @include paragraph-text;
   }
 }
 
@@ -29,4 +29,8 @@
   padding: 0;
   list-style-type: none;
   margin-bottom: 54px;
+}
+
+.faq-section__button {
+  @include button-basic($clr-white, $clr-blue);
 }

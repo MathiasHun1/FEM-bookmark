@@ -1,11 +1,7 @@
-import './Extensions.scss';
 import chromeSVG from '../../assets/logo-chrome.svg';
 import firefoxSVG from '../../assets/logo-firefox.svg';
 import operaSVG from '../../assets/logo-opera.svg';
 import dottedLine from '../../assets/bg-dots.svg';
-
-import Button from '../Button';
-import { COLORS } from '../../constants';
 
 const cards = [
   {
@@ -29,7 +25,9 @@ const Extensions = () => {
   return (
     <section className="extensions">
       <div className="extensions__text-section">
-        <h2 className="extensions__title">Download the extension</h2>
+        <h2 className="extensions__title title-small">
+          Download the extension
+        </h2>
         <p className="extension__para">
           We’ve got more browsers in the pipeline. Please do let us know if
           you’ve got a favourite you’d like us to prioritize.
@@ -53,7 +51,7 @@ const Card = ({ image, name, version }) => {
       </div>
 
       <div className="card__text-container">
-        <h3 className="card__title">Add to {name}</h3>
+        <h3 className="card__title title-very-small">Add to {name}</h3>
         <p className="card__para">Minimum version {version}</p>
       </div>
 
@@ -61,13 +59,7 @@ const Card = ({ image, name, version }) => {
         <img src={dottedLine} alt="" />
       </div>
 
-      <Button
-        textColor={COLORS.white}
-        backgroundColor={COLORS.blue}
-        uniqueStyle={{ paddingInline: 0, width: '100%' }}
-      >
-        Add & Install Extension
-      </Button>
+      <button className="card__button">Add & Install Extension</button>
     </div>
   );
 };

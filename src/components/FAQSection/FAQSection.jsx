@@ -1,15 +1,12 @@
-import './FAQSection.scss';
-import arrowSVG from '../../assets/icon-arrow.svg';
-
 import ListItem from '../ListItem';
-import Button from '../Button';
-import { COLORS } from '../../constants';
 
 const FAQSection = () => {
   return (
     <section className="faq-section">
       <div className="faq-section__text-container">
-        <h2 className="faq-section__title">Frequently Asked Questions</h2>
+        <h2 className="faq-section__title title-small">
+          Frequently Asked Questions
+        </h2>
         <p className="faq-section__para">
           Here are some of our FAQs. If you have any other questions you’d like
           answered please feel free to email us.
@@ -50,9 +47,7 @@ const FAQSection = () => {
         />
       </ul>
 
-      <Button textColor={COLORS.white} backgroundColor={COLORS.blue}>
-        More Info
-      </Button>
+      <button className="faq-section__button">More Info</button>
     </section>
   );
 };

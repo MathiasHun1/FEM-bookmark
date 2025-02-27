@@ -1,10 +1,26 @@
-import './Features.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import Illustration from '../Illustration';
 import bookmarkSVG from '../../assets/illustration-features-tab-1.svg';
 import searchSVG from '../../assets/illustration-features-tab-2.svg';
 import shareSVG from '../../assets/illustration-features-tab-3.svg';
+
+const data = {
+  bookmark: {
+    image: bookmarkSVG,
+    title: 'Bookmark in one click',
+    text: 'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.',
+  },
+  search: {
+    image: searchSVG,
+    title: 'Intelligent search',
+    text: 'Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.',
+  },
+  share: {
+    image: shareSVG,
+    title: 'Share your bookmarks',
+    text: 'Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button',
+  },
+};
 
 const Features = () => {
   const [activeButton, setActiveButton] = useState('search');
@@ -31,8 +47,8 @@ const Features = () => {
   return (
     <section className="features-section">
       <div className="features-section__header">
-        <h2 className="features-section__header__title">Features</h2>
-        <p className="features-section__header__para">
+        <h2 className="features-section__header-title title-small">Features</h2>
+        <p className="features-section__header-para">
           Our aim is to make it quick and easy for you to access your favourite
           websites. Your bookmarks sync between your devices so you can access
           them on the go.
@@ -74,57 +90,19 @@ const Features = () => {
         <div className="stepper__marker" style={stepperStyle}></div>
       </div>
 
-      {activeFeature === 'bookmark' && (
-        <div className="features-section__grid">
-          <Illustration
-            image={bookmarkSVG}
-            direction="left"
-            imageStyle={{ marginTop: '3vw', marginBottom: '8vw' }}
-          />
-          <div className="grid__text">
-            <h2 className="feature__title">Bookmark in one click</h2>
-            <p className="feature__para">
-              Organize your bookmarks however you like. Our simple drag-and-drop
-              interface gives you complete control over how you manage your
-              favourite sites.
-            </p>
-          </div>
+      <div className="features-section__grid">
+        <div className="grid__image">
+          <img src={data[activeFeature].image} alt="" />
         </div>
-      )}
 
-      {activeFeature === 'search' && (
-        <div className="features-section__grid ">
-          <Illustration
-            image={searchSVG}
-            direction="left"
-            imageStyle={{ marginTop: '3vw', marginBottom: '5vw' }}
-          />
-          <div className="grid__text">
-            <h2 className="feature__title">Intelligent search</h2>
-            <p className="feature__para">
-              Our powerful search feature will help you find saved sites in no
-              time at all. No need to trawl through all of your bookmarks.
-            </p>
-          </div>
+        <div className="grid__text">
+          <h2 className="feature__title title-small">
+            {data[activeFeature].title}
+          </h2>
+          <p className="feature__para">{data[activeFeature].text}</p>
+          <button className="feature__button">More Info</button>
         </div>
-      )}
-
-      {activeFeature === 'share' && (
-        <div className="features-section__grid">
-          <Illustration
-            image={shareSVG}
-            direction="left"
-            imageStyle={{ marginTop: '3vw', marginBottom: '5vw' }}
-          />
-          <div className="grid__text">
-            <h2 className="feature__title">Share your bookmarks</h2>
-            <p className="feature__para">
-              Easily share your bookmarks and collections with others. Create a
-              shareable link that you can send at the click of a button
-            </p>
-          </div>
-        </div>
-      )}
+      </div>
     </section>
   );
 };

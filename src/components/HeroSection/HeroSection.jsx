@@ -1,32 +1,30 @@
-import './HeroSection.scss';
-import { COLORS } from '../../constants';
 import heroSVG from '../../assets/illustration-hero.svg';
-
-import Button from '../Button';
-import Illustration from '../Illustration';
 
 const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-section__text-container">
-        <h1 className="hero-section__title">A Simple Bookmark Manager</h1>
+        <h1 className="hero-section__title  title-big">
+          A Simple Bookmark Manager
+        </h1>
         <p className="hero-section__para">
           A clean and simple interface to organize your favourite websites. Open
           a new browser tab and see your sites load instantly. Try it for free.
         </p>
         <div className="hero-section__buttons">
-          <Button textColor={COLORS.white} backgroundColor={COLORS.blue}>
+          <button className="hero-section__chrome-button">
             Get it on Chrome
-          </Button>
-          <Button
-            textColor={COLORS.darkGrey_0_75}
-            backgroundColor={COLORS.lightGrey}
-          >
+          </button>
+          <button className="hero-section__firefox-button">
             Get it on Firefox
-          </Button>
+          </button>
         </div>
       </div>
-      {/* <Illustration image={heroSVG} direction="right" /> */}
+      <div className="hero-section__image_container">
+        <div className="hero-section__image-wrapper">
+          <img src={heroSVG} alt="" className="image_1" />
+        </div>
+      </div>
     </section>
   );
 };

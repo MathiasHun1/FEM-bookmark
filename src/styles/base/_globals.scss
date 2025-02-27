@@ -1,0 +1,86 @@
+@use '../abstracts/breakpoints' as media;
+@use '../abstracts/' as *;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.title-big {
+  font-size: calc(48rem / 16);
+  font-weight: $fw-semi-bold;
+  line-height: 1.2;
+  color: $clr-dark-grey;
+  @include media.small-under {
+    font-size: calc(30rem / 16);
+  }
+}
+
+.title-small {
+  font-size: calc(32rem / 16);
+  font-weight: $fw-semi-bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $clr-dark-grey;
+
+  @include media.small-under {
+    font-size: calc(24rem / 16);
+  }
+}
+
+.title-very-small {
+  font-size: calc(20rem / 16);
+  font-weight: $fw-semi-bold;
+  line-height: 1.2;
+  color: $clr-dark-grey;
+}
+
+.app {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: clamp(700px, 80%, 1500px);
+  max-width: 1500px;
+  margin: 0 auto;
+
+  @include media.large-under {
+    width: 100%;
+    padding-inline: 32px;
+  }
+}
+
+.logo-bookmark {
+  --logo-size: 150px;
+  width: var(--logo-size);
+  min-width: var(--logo-size);
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.visible-large {
+  @include media.large-under {
+    display: none;
+  }
+}
+
+.visible-small {
+  display: none;
+
+  @include media.large-under {
+    display: block;
+  }
+}

@@ -1,4 +1,5 @@
-@use './../../styles/base/' as *;
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
 
 .extensions {
   display: flex;
@@ -6,27 +7,35 @@
   justify-content: center;
   gap: calc(48rem / 16);
   padding-bottom: calc(150px + 2 * 40px);
+
+  @include media.large-under {
+    gap: 40px;
+  }
 }
 
 .extensions__text-section {
-  max-width: 540px;
   text-align: center;
   align-self: center;
 }
 
 .extensions__title {
-  @include font-sub-title;
   margin-bottom: 1rem;
 }
 
 .extension__para {
-  @include font-para;
+  @include paragraph-text;
 }
 
 .extensions__card-section {
   display: flex;
   justify-content: center;
   gap: 34px;
+
+  @include media.large-under {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
 }
 
 // Card styles
@@ -60,14 +69,20 @@
 }
 
 .card__title {
-  @include font-logo-title;
+  line-height: 1.5;
 }
 
 .card__para {
-  @include font-logo-para;
+  @include paragraph-text;
+  font-size: calc(15rem / 16);
+  opacity: 0.5;
 }
 
 .dotted-line {
   width: var(--card-width);
   margin-bottom: 24px;
+}
+
+.card__button {
+  @include button-basic($clr-white, $clr-blue);
 }

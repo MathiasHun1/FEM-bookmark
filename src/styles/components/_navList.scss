@@ -1,12 +1,12 @@
-@use '../styles/base/' as *;
+@use '../abstracts/' as *;
 
-.nav__list {
+.nav-list {
   padding: 0;
   display: flex;
   gap: 48px;
 }
 
-.nav__list-item {
+.nav-list__list-item {
   list-style-type: none;
   color: inherit;
 
@@ -15,7 +15,7 @@
     cursor: pointer;
   }
 
-  .nav__link {
+  & a {
     text-decoration: none;
     color: inherit;
   }

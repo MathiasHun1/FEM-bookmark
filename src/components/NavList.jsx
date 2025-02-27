@@ -1,22 +1,14 @@
-import './NavList.scss';
-
 const NavList = () => {
   return (
-    <ul className="nav__list">
-      <li className="nav__list-item">
-        <a className="nav__link" href="">
-          FEATURES
-        </a>
+    <ul className="nav-list">
+      <li className="nav-list__list-item">
+        <a href="">FEATURES</a>
       </li>
-      <li className="nav__list-item">
-        <a href="" className="nav__link">
-          PRICING
-        </a>
+      <li className="nav-list__list-item">
+        <a href="">PRICING</a>
       </li>
-      <li className="nav__list-item">
-        <a href="" className="nav__link">
-          CONTACTS
-        </a>
+      <li className="nav-list__list-item">
+        <a href="">CONTACTS</a>
       </li>
     </ul>
   );

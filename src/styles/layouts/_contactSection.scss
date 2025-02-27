@@ -1,4 +1,5 @@
-@use '../../styles/base/' as *;
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
 
 .contact-section {
   background-color: $clr-blue;
@@ -8,6 +9,7 @@
   justify-content: center;
   color: $clr-white;
   text-align: center;
+  padding-inline: 32px;
 }
 
 .container {
@@ -15,20 +17,31 @@
 }
 
 .contact-section__streched {
-  @include font-footer-streched;
+  font-size: calc(12rem / 16);
+  font-weight: $fw-semi-bold;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
+  margin-bottom: 36px;
 }
 
 .contact-section__title {
-  @include font-sub-title;
+  font-size: calc(32rem / 16);
+  max-width: 40ch;
   margin-bottom: 36px;
-  text-wrap: initial;
+
+  @include media.small-under {
+    font-size: calc(24rem / 16);
+  }
 }
 
 .contact-section__form {
   display: flex;
   gap: 1rem;
   justify-content: center;
+
+  @include media.small-under {
+    flex-direction: column;
+  }
 }
 
 .input__wrapper {
@@ -40,10 +53,15 @@
     padding-inline: 20px;
     border-radius: 5px;
     border: none;
+
+    @include media.small-under {
+      width: 100%;
+    }
   }
 
   .input__error-message {
     position: absolute;
+    top: 95%;
     width: 18.75rem;
     color: $clr-white;
     background: $clr-red;
@@ -53,6 +71,16 @@
     opacity: 0;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+
+    @include media.small-under {
+      width: 100%;
+      top: revert;
+      bottom: 95%;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
   }
 }
 
@@ -66,4 +94,8 @@
   background-image: url('/icon-error.svg');
   background-repeat: no-repeat;
   background-position: 95% center;
+}
+
+.contact-section__button {
+  @include button-basic($clr-white, $clr-red);
 }

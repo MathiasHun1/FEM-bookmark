@@ -1,0 +1,134 @@
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
+
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  align-items: center;
+  padding-top: 180px;
+  padding-bottom: 150px;
+  color: $clr-dark-grey;
+}
+
+.features-section__header {
+  text-align: center;
+}
+
+.features-section__header-title {
+  margin-bottom: 1rem;
+}
+
+.features-section__header-para {
+  @include paragraph-text;
+}
+
+.features-section__stepper {
+  width: clamp(500px, 70%, 850px);
+  min-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  justify-items: center;
+  border-bottom: 2px solid hsla(231 58 55 / 0.2);
+
+  & > button {
+    background: none;
+    border: none;
+    opacity: 0.75;
+  }
+
+  & > button:hover {
+    cursor: pointer;
+    color: $clr-red;
+    opacity: 1;
+  }
+}
+
+.stepper__option-text {
+  padding-bottom: 2rem;
+}
+
+.stepper__marker {
+  grid-column: 1 / -1;
+  height: 3px;
+  width: 33%;
+  background: $clr-red;
+  transition: transform 200ms ease;
+}
+
+.features-section__grid {
+  --child-width: 300px;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+
+  @include media.large-under {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid__image {
+  min-width: var(--child-width);
+
+  position: relative;
+  justify-items: end;
+
+  & > img {
+    width: clamp(500px, 40vw, 550px);
+
+    @include media.large-under {
+      min-width: unset;
+      width: 80%;
+      min-width: 310px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 90px;
+    right: min(15vw, 400px);
+    z-index: -1;
+    height: 350px;
+    width: 3000px;
+    background: $clr-blue;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+
+    @include media.large-under {
+      height: 220px;
+      top: 80px;
+    }
+  }
+
+  @include media.large-under {
+    min-width: revert;
+  }
+}
+
+.grid__text {
+  min-width: var(--child-width);
+  padding-top: 3rem;
+
+  @include media.large-under {
+    min-width: unset;
+    width: 100%;
+    grid-row-start: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.feature__para {
+  @include paragraph-text;
+  margin-bottom: 2rem;
+}
+
+.feature__button {
+  @include button-basic($clr-white, $clr-blue);
+}

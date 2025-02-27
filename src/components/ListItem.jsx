@@ -1,4 +1,3 @@
-import './ListItem.scss';
 import { useState } from 'react';
 import { COLORS } from '../constants';
 

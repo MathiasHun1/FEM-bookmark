@@ -1,14 +1,4 @@
+@use './abstracts/' as *;
 @use './base/' as *;
-@use './base/reset';
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-html,
-body,
-#root {
-  height: 100%;
-}
-
-body {
-  font-family: $ff-base;
-  color: $clr-dark-grey;
-}
+@use './layouts/' as *;
+@use './components/' as *;

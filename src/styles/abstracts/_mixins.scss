@@ -1,0 +1,41 @@
+@use './variables' as *;
+@use './breakpoints' as media;
+
+@mixin font-button-normal {
+  font-size: calc(14rem / 16);
+  font-weight: $fw-semi-bold;
+}
+
+@mixin paragraph-text {
+  font-size: calc(18rem / 16);
+  max-width: 50ch;
+  opacity: 0.5;
+  font-weight: $fw-regular;
+  color: $clr-dark-grey;
+
+  @include media.small-under {
+    font-size: calc(15rem / 16);
+  }
+}
+
+@mixin button-basic($primary: 'black', $secondary: none) {
+  @include font-button-normal;
+  color: $primary;
+  background: $secondary;
+  border: $primary;
+  padding: 10px 24px;
+  border-radius: 5px;
+  text-transform: none;
+  box-shadow: 0px 6px 5px -3px $clr-button-shadow;
+
+  &:hover {
+    color: $secondary;
+    outline: 2px solid $secondary;
+    background: $primary;
+    cursor: pointer;
+  }
+
+  @include media.small-under {
+    padding: 10px 16px;
+  }
+}

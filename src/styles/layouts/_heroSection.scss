@@ -1,0 +1,111 @@
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
+
+.hero-section {
+  display: flex;
+  color: $clr-dark-grey;
+  padding-top: 82px;
+
+  @include media.large-under {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+.hero-section__text-container {
+  width: 50%;
+  flex: 1;
+  flex-shrink: 0;
+  margin-top: 3rem;
+  padding-right: 20px;
+
+  @include media.large-under {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+}
+
+.hero-section__text-wrapper {
+  max-width: 30ch;
+}
+
+.hero-section__title {
+  margin-bottom: 24px;
+}
+
+.hero-section__para {
+  margin-bottom: 32px;
+  @include paragraph-text;
+}
+
+.hero-section__image_container {
+  width: 50%;
+  flex: 1;
+  flex-shrink: 0;
+
+  @include media.large-under {
+    width: 100%;
+  }
+}
+
+.hero-section__image-wrapper {
+  --width: clamp(500px, 50vw, 580px);
+
+  width: var(--width);
+  position: relative;
+
+  @include media.large-under {
+    width: clamp(350px, 80vw, 450px);
+    min-width: 350px;
+  }
+
+  &::after {
+    position: absolute;
+    left: min(18vw, 500px);
+    top: 90px;
+    content: '';
+    z-index: -1;
+    width: 3000px;
+    height: 350px;
+    background: $clr-blue;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+
+    @include media.large-under {
+      height: 220px;
+      top: 65px;
+    }
+  }
+
+  & > img {
+    transform: translateX(6vw);
+
+    @include media.large-under {
+      transform: none;
+    }
+  }
+}
+
+.hero-section__buttons {
+  display: flex;
+  gap: 1rem;
+
+  @include media.large-under {
+    justify-content: center;
+  }
+}
+
+.hero-section__chrome-button {
+  @include button-basic($clr-white, $clr-blue);
+}
+
+.hero-section__firefox-button {
+  @include button-basic(rgba($clr-dark-grey, 0.75), $clr-very-light-grey);
+
+  &:hover {
+    color: rgba($clr-dark-grey, 0.75);
+    outline-color: rgba($clr-dark-grey, 0.75);
+    background: $clr-white;
+  }
+}
