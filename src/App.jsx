@@ -4,7 +4,7 @@ import Features from './components/FeaturesSection/Features';
 import Extensions from './components/Extensions/Extensions';
 import FAQSection from './components/FAQSection/FAQSection';
 import ContactSection from './components/ContactSection/ContactSection';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <FAQSection />
       </main>
       <ContactSection />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

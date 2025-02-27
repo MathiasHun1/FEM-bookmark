@@ -1,14 +1,28 @@
 @use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
 
 .nav-list {
   padding: 0;
   display: flex;
   gap: 48px;
+
+  @include media.small-under {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
 }
 
 .nav-list__list-item {
   list-style-type: none;
   color: inherit;
+  font-size: calc(13rem / 16);
+  letter-spacing: 1.5px;
+
+  @include media.small-under {
+    font-size: calc(15rem / 16);
+  }
 
   &:hover {
     color: $clr-red;

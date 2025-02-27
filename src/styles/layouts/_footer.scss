@@ -1,0 +1,53 @@
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
+
+.footer {
+  background: $clr-dark-grey;
+}
+
+.footer__inner-wrapper {
+  padding-block: 32px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media.small-under {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+.footer__logo {
+  width: 150px;
+}
+
+.footer__navigation-container {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+
+  @include media.small-under {
+    flex-direction: column;
+    gap: 38px;
+  }
+}
+
+.social-icons-container {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 34px;
+}
+
+.social-icon {
+  width: 24px;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+  & > path {
+    fill: $clr-red;
+  }
+}
