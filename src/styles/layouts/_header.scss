@@ -23,3 +23,12 @@ header nav {
   padding: 12px 32px;
   @include button-basic($clr-white, $clr-red);
 }
+
+.hamburger-button {
+  background: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

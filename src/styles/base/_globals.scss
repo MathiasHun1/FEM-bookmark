@@ -71,6 +71,10 @@ li {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 .visible-large {
   @include media.large-under {
     display: none;

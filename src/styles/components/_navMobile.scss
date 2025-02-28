@@ -1,0 +1,69 @@
+@use '../abstracts/' as *;
+@use '../abstracts/breakpoints' as media;
+
+.nav-mobile {
+  --border-color: hsla(0 0 100 / 0.15);
+
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: $clr-white;
+  background-color: rgba($clr-dark-grey, 0.95);
+  font-size: calc(20rem / 16);
+  letter-spacing: 1.5px;
+
+  @include media.large-under {
+    display: block;
+  }
+}
+
+.nav-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 48px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.close-button {
+  width: 15px;
+  background: none;
+  border: none;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav-list-mobile {
+}
+
+.nav-list-item-mobile {
+  padding-block: 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-mobile-button {
+  background: none;
+  color: inherit;
+  width: 100%;
+  border: 2px solid $clr-white;
+  border-radius: 5px;
+  padding-block: 5px;
+}
+
+.nav-mobile__social-icons-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
