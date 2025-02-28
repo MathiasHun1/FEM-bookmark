@@ -34,7 +34,6 @@
 
   & > button {
     background: none;
-    border: none;
     opacity: 0.75;
   }
 
@@ -43,10 +42,36 @@
     color: $clr-red;
     opacity: 1;
   }
+
+  @include media.large-under {
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-width: unset;
+  }
 }
 
-.stepper__option-text {
+.stepper__option-button {
   padding-bottom: 2rem;
+  position: relative;
+  border: none;
+
+  @include media.large-under {
+    border-top: 2px solid hsla(231 58 55 / 0.2);
+    padding-block: 1.2rem;
+    width: 100%;
+  }
+
+  &::after {
+    background: $clr-red;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 0px;
+    transform: translateX(-50%);
+    transition: width 200ms ease-out;
+  }
 }
 
 .stepper__marker {
@@ -55,6 +80,10 @@
   width: 33%;
   background: $clr-red;
   transition: transform 200ms ease;
+
+  @include media.large-under {
+    display: none;
+  }
 }
 
 .features-section__grid {
@@ -82,7 +111,7 @@
     @include media.large-under {
       min-width: unset;
       width: 80%;
-      min-width: 310px;
+      min-width: 280px;
     }
   }
 
@@ -131,4 +160,13 @@
 
 .feature__button {
   @include button-basic($clr-white, $clr-blue);
+}
+
+.active {
+}
+
+.stepper__option-button.active::after {
+  @include media.large-under {
+    width: 145px;
+  }
 }

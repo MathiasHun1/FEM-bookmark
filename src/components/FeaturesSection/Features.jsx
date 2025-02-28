@@ -58,7 +58,7 @@ const Features = () => {
       <div className="features-section__stepper">
         <button
           id="bookmark"
-          className={`stepper__option-text ${
+          className={`stepper__option-button ${
             document.getElementById('bookmark') === activeButton ? 'active' : ''
           }`}
           data-position="-100"
@@ -68,7 +68,7 @@ const Features = () => {
         </button>
         <button
           id="search"
-          className={`stepper__option-text ${
+          className={`stepper__option-button ${
             document.getElementById('search') === activeButton ? 'active' : ''
           }`}
           data-position="0"
@@ -78,7 +78,7 @@ const Features = () => {
         </button>
         <button
           id="share"
-          className={`stepper__option-text ${
+          className={`stepper__option-button ${
             document.getElementById('share') === activeButton ? 'active' : ''
           }`}
           onClick={handleStepperClick}
